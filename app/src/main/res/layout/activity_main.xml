@@ -1,18 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="dmcc.com.myapptitle.MainActivity">
 
     <com.wsg.widget.AppTitle
         android:id="@+id/mytitle"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/colorAccent"
+        android:background="@color/colorAccent" />
+
+    <com.wsg.widget.AppTitle
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/dalingtext"
+        app:canFinish="true"
+        app:centerTextColor="@color/dalingtext"
+        app:rightButtonRes="@color/dalingtext"
+        app:leftTextSize="@dimen/default_centerTextSize"
+        app:centerTextSize="@dimen/default_centerTextSize"
+        app:leftButtonRes="@dimen/default_centerTextSize"
+        app:leftImageRes="@dimen/default_centerTextSize"
+        app:rightButton2Res="@dimen/default_centerTextSize"
+
         app:centerText="标题"
-        app:rightText="保存"
+        app:leftText="左侧文字"
+        app:leftTextColor="@color/appThemeColor"
+        app:rightText="右侧文字"
+        />
+
+    <com.wsg.widget.AppTitle
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorAccent"
+        app:canFinish="true"
+        app:centerText="中间"
+        app:centerTextColor="@color/colorPrimaryDark"
+
+        app:rightButton2Res="@mipmap/ic_launcher"
         app:showBack="true" />
-</RelativeLayout>
+
+</LinearLayout>

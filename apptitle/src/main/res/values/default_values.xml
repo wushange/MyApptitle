@@ -12,4 +12,5 @@
     <color name="default_rightTextColor">#000000</color>
 
     <bool name="default_showBack">false</bool>
+    <bool name="default_canFinish">true</bool>
 </resources>

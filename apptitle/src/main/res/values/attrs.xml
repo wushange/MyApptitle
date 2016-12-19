@@ -2,9 +2,10 @@
 <resources>
 
     <declare-styleable name="AppTitle">
-        <attr name="showBack" format="boolean"/>
-        <attr name="leftButtonRes" format="reference"/>
-        <attr name="leftImageRes" format="reference"/>
+        <attr name="showBack" format="boolean" />
+        <attr name="canFinish" format="boolean" />
+        <attr name="leftButtonRes" format="reference" />
+        <attr name="leftImageRes" format="reference" />
         <attr name="leftText" format="string" />
         <attr name="leftTextSize" format="dimension" />
         <attr name="leftTextColor" format="color" />
@@ -13,9 +14,9 @@
         <attr name="centerTextColor" format="color" />
         <attr name="rightText" format="string" />
         <attr name="rightTextSize" format="dimension" />
-        <attr name="rightTextColor" format="color"/>
-        <attr name="rightButtonRes" format="reference"/>
-        <attr name="rightButton2Res" format="reference"/>
+        <attr name="rightTextColor" format="color" />
+        <attr name="rightButtonRes" format="reference" />
+        <attr name="rightButton2Res" format="reference" />
     </declare-styleable>
 
 </resources>
