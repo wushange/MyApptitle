@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Basic-->
+    <dimen name="default_leftTextSize">20sp</dimen>
+    <dimen name="default_centerTextSize">20sp</dimen>
+    <dimen name="default_rightTextSize">20sp</dimen>
+
+
+    <color name="default_leftTextColor">#000000</color>
+    <color name="default_centerTextColor">#000000</color>
+    <color name="default_rightTextColor">#000000</color>
+
+    <bool name="default_showBack">false</bool>
+</resources>
