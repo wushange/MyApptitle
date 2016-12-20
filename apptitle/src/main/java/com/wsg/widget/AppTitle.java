@@ -14,11 +14,22 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+
 /**
  * Created by wushange on 2016/12/19.
  */
 
 public class AppTitle extends RelativeLayout implements View.OnClickListener, View.OnLongClickListener {
+
+    public static final int LeftButton = R.id.title_back_btn;
+    public static final int LeftImage = R.id.title_left_img;
+    public static final int LeftText = R.id.title_left_text;
+    public static final int Centertext = R.id.title_center_text;
+    public static final int RightText = R.id.title_right_text;
+    public static final int RightButton = R.id.title_right_btn;
+    public static final int RightButton2 = R.id.title_right_btn_sub;
+
+
     private RelativeLayout mRoot;
     private ImageButton mLeftButton;
     private ImageButton mLeftImage;
@@ -54,12 +65,16 @@ public class AppTitle extends RelativeLayout implements View.OnClickListener, Vi
         mRightButton = (ImageButton) findViewById(R.id.title_right_btn);
         mRightButton2 = (ImageButton) findViewById(R.id.title_right_btn_sub);
         mRightText = (TextView) findViewById(R.id.title_right_text);
+
+        mLeftText.setOnClickListener(this);
         mLeftButton.setOnClickListener(this);
         mLeftImage.setOnClickListener(this);
         mCenterText.setOnClickListener(this);
         mRightText.setOnClickListener(this);
         mRightButton.setOnClickListener(this);
         mRightButton2.setOnClickListener(this);
+
+        mLeftText.setOnLongClickListener(this);
         mLeftButton.setOnLongClickListener(this);
         mLeftImage.setOnLongClickListener(this);
         mCenterText.setOnLongClickListener(this);
@@ -174,12 +189,12 @@ public class AppTitle extends RelativeLayout implements View.OnClickListener, Vi
 
     @Override
     public void onClick(View view) {
-        if (actionListener != null) {
-            if (canFinish) {
-                if (view.getId() == R.id.title_back_btn) {
-                    ((Activity) getContext()).finish();
-                }
+        if (canFinish) {
+            if (view.getId() == R.id.title_back_btn) {
+                ((Activity) getContext()).finish();
             }
+        }
+        if (actionListener != null) {
             actionListener.OnActionClickListener(view);
         }
 
@@ -234,59 +249,59 @@ public class AppTitle extends RelativeLayout implements View.OnClickListener, Vi
         boolean OnActionLongClickListener(View view);
     }
 
-    public static int getResourceId(
+    private int getResourceId(
             TypedArray typedArray,
             int id,
             int defaultId) {
         return typedArray.getResourceId(id, defaultId);
     }
 
-    public static String getString(
+    private String getString(
             TypedArray typedArray,
             int id) {
         return typedArray.getString(id);
     }
 
-    public static int getInt(
+    private int getInt(
             TypedArray typedArray,
             int id,
             int defaultId) {
         return typedArray.getInt(id, typedArray.getResources().getInteger(defaultId));
     }
 
-    public static boolean getBoolean(
+    private boolean getBoolean(
             TypedArray typedArray,
             int id,
             int defaultId) {
         return typedArray.getBoolean(id, typedArray.getResources().getBoolean(defaultId));
     }
 
-    public static int getDimenSize(
+    private int getDimenSize(
             TypedArray typedArray,
             int id,
             int defaultId) {
         return typedArray.getDimensionPixelSize(id, typedArray.getResources().getDimensionPixelSize(defaultId));
     }
 
-    public static int getDimenOffset(
+    private int getDimenOffset(
             TypedArray typedArray,
             int id,
             int defaultId) {
         return typedArray.getDimensionPixelOffset(id, typedArray.getResources().getDimensionPixelOffset(defaultId));
     }
 
-    public static int getColor(
+    private int getColor(
             TypedArray typedArray,
             int id,
             int defaultId) {
         return typedArray.getColor(id, getColor(typedArray, defaultId));
     }
 
-    public static int getColor(TypedArray typedArray, int id) {
+    private int getColor(TypedArray typedArray, int id) {
         return getColor(typedArray, id, null);
     }
 
-    public static int getColor(TypedArray typedArray, int id, Resources.Theme theme) {
+    private int getColor(TypedArray typedArray, int id, Resources.Theme theme) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             return typedArray.getResources().getColor(id, theme);
         } else {
@@ -294,11 +309,11 @@ public class AppTitle extends RelativeLayout implements View.OnClickListener, Vi
         }
     }
 
-    public static int dp2px(Context context, float dpValue) {
+    private int dp2px(Context context, float dpValue) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpValue, context.getResources().getDisplayMetrics());
     }
 
-    public static int sp2px(Context context, float spValue) {
+    private int sp2px(Context context, float spValue) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, spValue, context.getResources().getDisplayMetrics());
     }
 }

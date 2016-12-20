@@ -20,8 +20,8 @@
         android:gravity="center"
         android:text="标题"
         android:textColor="@android:color/white"
-        android:textSize="16sp"
-        android:visibility="visible" />
+        android:textSize="20sp"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/title_left_text"
